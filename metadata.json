@@ -1,0 +1,6 @@
+{
+  "name": "Know Your Phrases",
+  "description": "Catalog, restore, and explain the complete, historically authentic phrasing and true intent of idioms, proverbs, and figures of speech.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

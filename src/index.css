@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-canvas: #090a0f;
+    --color-surface: rgba(22, 24, 33, 0.72);
+    --color-surface-hover: rgba(30, 33, 48, 0.85);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hover: rgba(245, 158, 11, 0.35);
+  }
+
+  body {
+    background-color: #08090d;
+    color: #f1f5f9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'SF Pro Text', 'SF Pro Display', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  .font-serif-literary {
+    font-family: 'Lora', -apple-system-ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+  }
+
+  .font-display {
+    font-family: 'Cinzel', -apple-system, BlinkMacSystemFont, 'SF Pro Display', serif;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', 'SF Mono', Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Apple-style Frosted Glass Utilities */
+.glass-panel {
+  background: rgba(18, 20, 29, 0.65);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(24, 27, 40, 0.8);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(16, 18, 26, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(22, 25, 37, 0.75);
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 158, 11, 0.06);
+}
+
+/* Smooth Apple-style Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Sound Wave animation for phrase speech */
+@keyframes soundwave {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+.animate-wave-1 {
+  animation: soundwave 1s ease-in-out infinite;
+}
+.animate-wave-2 {
+  animation: soundwave 1s ease-in-out infinite 0.2s;
+}
+.animate-wave-3 {
+  animation: soundwave 1s ease-in-out infinite 0.4s;
+}
+.animate-wave-4 {
+  animation: soundwave 1s ease-in-out infinite 0.15s;
+}
