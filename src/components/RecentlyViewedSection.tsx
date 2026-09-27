@@ -80,7 +80,7 @@ export const RecentlyViewedSection: React.FC<RecentlyViewedSectionProps> = ({
       </div>
 
       {/* Horizontal Fluid Carousel / Snap Rail */}
-      <div className="flex gap-3.5 overflow-x-auto pb-2 pt-1 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth">
+      <div className="flex gap-3 overflow-x-auto pb-2 pt-1 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth snap-x snap-mandatory">
         {recentPhrases.map((phrase, idx) => (
           <motion.div
             key={phrase.id}
@@ -94,7 +94,7 @@ export const RecentlyViewedSection: React.FC<RecentlyViewedSectionProps> = ({
             }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
             onClick={() => handleCardClick(phrase)}
-            className="w-[280px] sm:w-[310px] shrink-0 glass-card rounded-2xl p-4 border border-white/[0.08] hover:border-amber-400/30 flex flex-col justify-between cursor-pointer group shadow-sm hover:shadow-lg transition-all"
+            className="w-[250px] sm:w-[300px] shrink-0 snap-start glass-card rounded-2xl p-3.5 sm:p-4 border border-white/[0.08] hover:border-amber-400/30 flex flex-col justify-between cursor-pointer group shadow-sm hover:shadow-lg transition-all"
           >
             <div>
               {/* Top info and delete */}

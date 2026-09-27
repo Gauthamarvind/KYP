@@ -208,7 +208,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="flex-1 pb-20"
+              className="flex-1 pb-28 sm:pb-24"
             >
               <HeroSearch
                 searchQuery={searchQuery}
@@ -323,7 +323,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="flex-1 pb-20"
+              className="flex-1 pb-28 sm:pb-24"
             >
               <SentenceValidator
                 initialPhrase={labTargetPhrase}
@@ -340,7 +340,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="flex-1 pb-20"
+              className="flex-1 pb-28 sm:pb-24"
             >
               <PhraseRestorerQuiz />
             </motion.main>
@@ -354,7 +354,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="flex-1 pb-20"
+              className="flex-1 pb-28 sm:pb-24"
             >
               <BookmarksView
                 bookmarks={bookmarks}

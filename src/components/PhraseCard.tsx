@@ -128,16 +128,16 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
   return (
     <motion.div 
       whileHover={{ y: -3, transition: { duration: 0.2, ease: 'easeOut' } }}
-      className="glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between relative group cursor-pointer border border-white/[0.08] h-full"
+      className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between relative group cursor-pointer border border-white/[0.08] h-full"
       onClick={handleCardClick}
     >
       <div className="flex-1 flex flex-col">
         {/* Top Clean Unboxed Metadata (Zero-Pill Discipline) */}
-        <div className="flex items-center justify-between gap-2 mb-3 text-xs text-zinc-400">
-          <div className="flex items-center gap-1.5 truncate">
-            <span className="font-medium text-zinc-300">{phrase.category}</span>
+        <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3 text-xs text-zinc-400">
+          <div className="flex items-center gap-1.5 min-w-0">
+            <span className="font-medium text-zinc-300 truncate max-w-[110px] sm:max-w-[160px]">{phrase.category}</span>
             <span aria-hidden="true" className="text-zinc-600">·</span>
-            <span className={`font-medium ${badgeInfo.color}`}>{badgeInfo.label}</span>
+            <span className={`font-medium truncate ${badgeInfo.color}`}>{badgeInfo.label}</span>
           </div>
 
           <div className="flex items-center gap-1 shrink-0">
@@ -170,8 +170,8 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
         </div>
 
         {/* Truncated / Modern Version Contrast */}
-        <div className="mb-3 px-3.5 py-2.5 rounded-2xl bg-white/[0.03] border border-white/[0.04]">
-          <div className="text-[11px] text-zinc-500 font-medium mb-0.5">
+        <div className="mb-2.5 sm:mb-3 px-3 py-2 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/[0.04]">
+          <div className="text-[10px] sm:text-[11px] text-zinc-500 font-medium mb-0.5">
             Commonly Truncated
           </div>
           <p className="text-zinc-400 font-serif-literary line-through decoration-rose-400/50 decoration-1 text-xs sm:text-sm">
@@ -180,18 +180,18 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
         </div>
 
         {/* Complete Authentic Restored Version */}
-        <div className="mb-4 p-4 rounded-2xl bg-gradient-to-br from-amber-950/20 via-zinc-900/60 to-zinc-950/80 border border-amber-400/25 shadow-inner relative overflow-hidden group/quote">
+        <div className="mb-3 sm:mb-4 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-950/20 via-zinc-900/60 to-zinc-950/80 border border-amber-400/25 shadow-inner relative overflow-hidden group/quote">
           <div className="flex items-center justify-between gap-2 mb-2">
             <div className="flex items-center gap-1 text-[11px] text-amber-400 font-semibold tracking-wide">
-              <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
-              <span>Authentic Restoration</span>
+              <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span className="truncate">Authentic Restoration</span>
             </div>
 
             {/* Apple-style Sound Wave button */}
             <button
               type="button"
               onClick={handleAudioPlay}
-              className={`px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 transition-all min-h-[28px] ${
+              className={`px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 transition-all min-h-[28px] shrink-0 ${
                 isPlayingAudio 
                   ? 'bg-amber-400 text-zinc-950' 
                   : 'bg-white/[0.06] hover:bg-white/[0.12] text-zinc-300 hover:text-white'
@@ -218,7 +218,7 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
         </div>
 
         {/* Revelation Takeaway */}
-        <div className="mb-3 p-3 rounded-2xl bg-white/[0.02] border border-white/[0.05] flex items-start gap-2">
+        <div className="mb-2.5 sm:mb-3 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/[0.05] flex items-start gap-2">
           <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
           <p className="text-xs text-zinc-300 leading-normal">
             <span className="text-amber-300 font-medium">True Intent: </span>
@@ -227,26 +227,26 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
         </div>
 
         {/* Intent Description snippet */}
-        <div className="text-xs text-zinc-400 mb-4 flex-1">
+        <div className="text-xs text-zinc-400 mb-3 sm:mb-4 flex-1">
           <p className="line-clamp-2">
             {phrase.original_intent}
           </p>
         </div>
 
         {/* Origin Metadata */}
-        <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 pt-3 border-t border-white/[0.06]">
-          <Clock className="w-3 h-3 text-zinc-500" />
+        <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 pt-2.5 sm:pt-3 border-t border-white/[0.06]">
+          <Clock className="w-3 h-3 text-zinc-500 shrink-0" />
           <span className="truncate">{phrase.historical_origin}</span>
         </div>
       </div>
 
       {/* Card Action Footer */}
-      <div className="pt-3 mt-3 border-t border-white/[0.06] flex items-center justify-between gap-2">
-        <div className="flex items-center gap-1.5 flex-wrap">
+      <div className="pt-2.5 sm:pt-3 mt-2.5 sm:mt-3 border-t border-white/[0.06] flex items-center justify-between gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1 sm:gap-1.5">
           <button
             type="button"
             onClick={handleShare}
-            className={`px-2.5 py-1.5 rounded-full border transition-all text-xs flex items-center gap-1 min-h-[32px] ${
+            className={`px-2 sm:px-2.5 py-1.5 rounded-full border transition-all text-xs flex items-center gap-1 min-h-[32px] ${
               hasShared
                 ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
                 : 'bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 hover:text-amber-200 border-white/[0.06] hover:border-amber-400/20'
@@ -256,12 +256,12 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
             {hasShared ? (
               <>
                 <Check className="w-3 h-3 text-emerald-400" />
-                <span className="text-emerald-400 text-[11px]">Shared!</span>
+                <span className="text-emerald-400 text-[11px]">Shared</span>
               </>
             ) : (
               <>
                 <Share2 className="w-3 h-3 text-amber-400" />
-                <span className="text-[11px]">Share</span>
+                <span className="text-[11px] hidden xs:inline">Share</span>
               </>
             )}
           </button>
@@ -269,7 +269,7 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
           <button
             type="button"
             onClick={handleCopyQuote}
-            className="px-2.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 hover:text-white border border-white/[0.06] transition-all text-xs flex items-center gap-1 min-h-[32px]"
+            className="px-2 sm:px-2.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 hover:text-white border border-white/[0.06] transition-all text-xs flex items-center gap-1 min-h-[32px]"
             title="Copy authentic phrase"
           >
             {hasCopied ? (
@@ -280,7 +280,7 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
             ) : (
               <>
                 <Copy className="w-3 h-3" />
-                <span className="text-[11px]">Copy</span>
+                <span className="text-[11px] hidden xs:inline">Copy</span>
               </>
             )}
           </button>
@@ -288,7 +288,7 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
           <button
             type="button"
             onClick={handleLabJump}
-            className="px-2.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-amber-300 hover:text-amber-200 border border-white/[0.06] hover:border-amber-400/20 transition-all text-xs flex items-center gap-1 min-h-[32px]"
+            className="px-2 sm:px-2.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-amber-300 hover:text-amber-200 border border-white/[0.06] hover:border-amber-400/20 transition-all text-xs flex items-center gap-1 min-h-[32px]"
             title="Test in Sentence Lab"
           >
             <FlaskConical className="w-3 h-3 text-amber-400" />
@@ -299,7 +299,7 @@ export const PhraseCard: React.FC<PhraseCardProps> = ({
         <button
           type="button"
           onClick={() => onOpenDetail(phrase)}
-          className="px-3 py-1.5 rounded-full bg-amber-400/10 hover:bg-amber-400 text-amber-300 hover:text-zinc-950 font-medium text-xs flex items-center gap-1 transition-all min-h-[32px]"
+          className="px-2.5 sm:px-3 py-1.5 rounded-full bg-amber-400/10 hover:bg-amber-400 text-amber-300 hover:text-zinc-950 font-medium text-xs flex items-center gap-1 transition-all min-h-[32px] shrink-0 active:scale-95"
         >
           <span>Deep Dive</span>
           <ArrowRight className="w-3 h-3" />
